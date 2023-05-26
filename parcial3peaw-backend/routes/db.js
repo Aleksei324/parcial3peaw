@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
-const { crearUsuario } = require('../controllers/chat')
+const { getDatabase } = require('../controllers/db')
 
-router.get('/', crearUsuario)
+router.get('/getdb', getDatabase)
 
 module.exports = router

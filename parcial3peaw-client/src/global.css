@@ -1,0 +1,32 @@
+.app {
+  margin: 5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+input {
+  padding: 1rem;
+  width: 70%;
+  border-style: solid;
+  border-radius: 1rem;
+}
+
+label {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.blue {
+  color: darkcyan;
+}
+
+.red {
+  color: darkred;
+}
+
+.msgPropio {
+  color: indianred;
+}

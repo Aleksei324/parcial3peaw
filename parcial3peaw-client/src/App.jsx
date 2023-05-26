@@ -1,27 +1,21 @@
 import { useState } from 'react'
+import { Chat, Login } from './components'
+import './global.css'
 
 function App() {
-  const [getMessages, setMessages] = useState(['Mensaje de placeholder 1', 'Mensaje de placeholder 2'])
-  const [getInput, setInput] = useState(['Mensaje de placeholder'])
 
-  const onInput = () => {
-    setMessages(x => [...x, getInput])
-  }
-
+  const [getLogged, setLogged] = useState(false)
+  const [getUsername, setUsername] = useState('')
   return (
-    <>
-      <h1>Parcial 3 peaw: chat en vivo</h1>
+    <div className='app'>
+      <h1>Parcial 3 peaw: <small>chat en vivo</small></h1>
       {
-        getMessages.map((message, key) => {
-          return <p>{message}</p>
-        })
+        getLogged ?
+          <Chat getUsername={getUsername} />
+        :
+          <Login setLogged={setLogged} setUsername={setUsername} />
       }
-      <form onSubmit={() => onInput()}>
-        <label htmlFor='inputChat'>Mensaje: </label>
-        <input id='inputChat' type='text' placeholder='Escribe tu mensaje...' 
-          value={getInput} onChange={(event) => setInput(event.target.value)} />
-      </form>
-    </>
+    </div>
   )
 }
 
